@@ -1,6 +1,6 @@
-# go_template
+# grpc_go_kit
 
-![golangci-lint status](https://github.com/103cuong/go_template/workflows/golangci-lint/badge.svg)
-[![Go Report Card](https://goreportcard.com/badge/github.com/103cuong/go_template)](https://goreportcard.com/report/github.com/103cuong/go_template)
+![golangci-lint status](https://github.com/103cuong/grpc_go_kit/workflows/golangci-lint/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/103cuong/grpc_go_kit)](https://goreportcard.com/report/github.com/103cuong/grpc_go_kit)
 
-a lightweight template 🍼 to start a new golang 🦍 project
+a lightweight kit for go 💅 grpc
