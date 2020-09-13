@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="903636b9-1f1f-499e-8b83-525798336128" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/proto/v1/cat_service.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/proto/v2/greeter.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third_party/protoc-gen.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/golangci-lint.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/golangci-lint.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
