@@ -1,5 +1,3 @@
-module github.com/103cuong/go_template
+module github.com/103cuong/grpc_go_kit
 
 go 1.14
-
-require github.com/gofiber/fiber v1.14.2
