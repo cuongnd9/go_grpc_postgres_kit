@@ -20,14 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="903636b9-1f1f-499e-8b83-525798336128" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/golangci-lint.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/golangci-lint.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/cmd/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/protocol/grpc/grpc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/service/v1/.keep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/service/v2/greeter_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/third_party/protoc_gen.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/protoc_gen.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.14.6/libexec" />
   <component name="Git.Settings">
@@ -43,6 +55,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
@@ -51,9 +64,32 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/api/proto/v2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pkg/cmd" />
+      <recent name="$PROJECT_DIR$/cmd" />
+      <recent name="$PROJECT_DIR$/cmd/client" />
+      <recent name="$PROJECT_DIR$/cmd/server" />
+      <recent name="$PROJECT_DIR$/pkg/cmd/server" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/api/proto/v2" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="go build github.com/103cuong/grpc_go_kit/cmd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="grpc_go_kit" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/cmd/server.go" />
+      <package value="github.com/103cuong/grpc_go_kit/cmd" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build github.com/103cuong/grpc_go_kit/cmd" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
@@ -73,5 +109,11 @@
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="456" y="252" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600534181546">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state x="456" y="252" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.838@0.23.1440.838" timestamp="1600534181546" />
   </component>
 </project>
