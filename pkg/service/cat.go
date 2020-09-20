@@ -1,13 +1,14 @@
 package service
 
 import (
+	"context"
 	"github.com/103cuong/go_grpc_postgres_kit/configs"
 	"github.com/103cuong/go_grpc_postgres_kit/pkg/model"
 )
 
 // GetCats fetch all cats.
-func GetCats(cats *[]model.Cat) (err error) {
-	err = configs.DB.Preload("Category").Find(&cats).Error
+func GetCats(ctx context.Context, cats *[]model.Cat) (err error) {
+	err = configs.DB.WithContext(ctx).Preload("Category").Find(&cats).Error
 	if err != nil {
 		return err
 	}
@@ -15,8 +16,8 @@ func GetCats(cats *[]model.Cat) (err error) {
 }
 
 // CreateCat create new cat.
-func CreateCat(cat *model.Cat) (err error) {
-	err = configs.DB.Create(&cat).Error
+func CreateCat(ctx context.Context, cat *model.Cat) (err error) {
+	err = configs.DB.WithContext(ctx).Create(&cat).Error
 	if err != nil {
 		return err
 	}
@@ -24,8 +25,8 @@ func CreateCat(cat *model.Cat) (err error) {
 }
 
 // GetCatByID fetch cat by ID.
-func GetCatByID(cat *model.Cat, id string) (err error) {
-	err = configs.DB.Preload("Category").Where("id = ?", id).First(&cat).Error
+func GetCatByID(ctx context.Context, cat *model.Cat, id string) (err error) {
+	err = configs.DB.WithContext(ctx).Preload("Category").Where("id = ?", id).First(&cat).Error
 	if err != nil {
 		return err
 	}
@@ -33,8 +34,8 @@ func GetCatByID(cat *model.Cat, id string) (err error) {
 }
 
 // UpdateCat update cat.
-func UpdateCat(cat *model.Cat) (err error) {
-	err = configs.DB.Save(&cat).Error
+func UpdateCat(ctx context.Context, cat *model.Cat) (err error) {
+	err = configs.DB.WithContext(ctx).Save(&cat).Error
 	if err != nil {
 		return err
 	}
@@ -42,8 +43,8 @@ func UpdateCat(cat *model.Cat) (err error) {
 }
 
 // DeleteCat delete cat.
-func DeleteCat(cat *model.Cat, id string) (err error) {
-	err = configs.DB.Where("id = ?", id).Delete(&cat).Error
+func DeleteCat(ctx context.Context, cat *model.Cat, id string) (err error) {
+	err = configs.DB.WithContext(ctx).Where("id = ?", id).Delete(&cat).Error
 	if err != nil {
 		return err
 	}
