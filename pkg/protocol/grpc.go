@@ -3,8 +3,8 @@ package protocol
 import (
 	"context"
 	"fmt"
-	greeterApi "github.com/103cuong/grpc_go_kit/pkg/api/server"
-	greeterServer "github.com/103cuong/grpc_go_kit/pkg/grpc/server"
+	API "github.com/103cuong/grpc_go_kit/pkg/api/server"
+	"github.com/103cuong/grpc_go_kit/pkg/grpc/server"
 	"google.golang.org/grpc"
 	"log"
 	"net"
@@ -20,8 +20,9 @@ func RunServer(ctx context.Context, port string) error { // optional param: db
 	}
 
 	// register service
-	server := grpc.NewServer()
-	greeterApi.RegisterGreeterServer(server, &greeterServer.GreeterServiceServer{})
+	grpcServer := grpc.NewServer()
+	API.RegisterGreeterServer(grpcServer, &server.GreeterServer{})
+	API.RegisterCatServiceServer(grpcServer, &server.CatServer{})
 
 	// graceful shutdown
 	c := make(chan os.Signal, 1)
@@ -31,7 +32,7 @@ func RunServer(ctx context.Context, port string) error { // optional param: db
 			// sig is a ^C, handle it
 			log.Println("💤 shutting down gRPC server")
 
-			server.GracefulStop()
+			grpcServer.GracefulStop()
 
 			<-ctx.Done()
 		}
@@ -39,5 +40,5 @@ func RunServer(ctx context.Context, port string) error { // optional param: db
 
 	// start gRPC server
 	log.Printf("💅 server ready at 0.0.0.0:%s", port)
-	return server.Serve(listen)
+	return grpcServer.Serve(listen)
 }
