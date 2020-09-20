@@ -3,11 +3,20 @@ package service
 import (
 	"context"
 	"github.com/103cuong/go_grpc_postgres_kit/configs"
+	"github.com/103cuong/go_grpc_postgres_kit/pkg/api/client"
 	"github.com/103cuong/go_grpc_postgres_kit/pkg/model"
+	"log"
 )
 
 // GetCats fetch all cats.
 func GetCats(ctx context.Context, cats *[]model.Cat) (err error) {
+	// 💅 stuff section, testing grpc client, 😂
+	res, err := configs.GreeterClient.SayHello(ctx, &client.HelloRequest{Name: "Cuong Tran"})
+	if err != nil {
+		log.Fatalf("🐛 %v\n", err)
+	}
+	log.Fatalf("🦄 %v\n", res)
+	// 💅 stuff section
 	err = configs.DB.WithContext(ctx).Preload("Category").Find(&cats).Error
 	if err != nil {
 		return err

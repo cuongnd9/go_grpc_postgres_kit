@@ -7,6 +7,7 @@ import (
 	"github.com/103cuong/go_grpc_postgres_kit/pkg/protocol"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"log"
 )
 
 func RunServer() error {
@@ -18,11 +19,15 @@ func RunServer() error {
 		PreferSimpleProtocol: true,
 	}), &gorm.Config{})
 	if err != nil {
+		log.Fatalln("connect to database failed")
 		panic("connect to database failed")
 	}
 
 	// migrate database.
 	migration.MigrateDB("up", "./internal/migration")
 
-	return protocol.RunServer(ctx, configs.App.Port)
+	//  grpc client registration
+	defer RegisterClient()
+
+	return protocol.RunServer(ctx, configs.AppConf.Port)
 }
