@@ -2,11 +2,27 @@ package cmd
 
 import (
 	"context"
-	"github.com/103cuong/grpc_go_kit/pkg/protocol/grpc"
+	"github.com/103cuong/grpc_go_kit/configs"
+	"github.com/103cuong/grpc_go_kit/internal/migration"
+	"github.com/103cuong/grpc_go_kit/pkg/protocol"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 func RunServer() error {
 	ctx := context.Background()
 
-	return grpc.RunServer(ctx, "50000")
+	var err error
+	configs.DB, err = gorm.Open(postgres.New(postgres.Config{
+		DSN:                  configs.BuildDSN(),
+		PreferSimpleProtocol: true,
+	}), &gorm.Config{})
+	if err != nil {
+		panic("connect to database failed")
+	}
+
+	// migrate database.
+	migration.MigrateDB("up")
+
+	return protocol.RunServer(ctx, "50000")
 }

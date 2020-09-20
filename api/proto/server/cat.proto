@@ -2,7 +2,7 @@ syntax="proto3";
 
 package v1;
 
-option go_package="./v1";
+option go_package="./server";
 
 service CatService {
   rpc ReadAll (ReadAllRequest) returns (ReadAllResponse) {}
@@ -54,9 +54,11 @@ message Cat {
   string id = 1;
   string name = 2;
   string color = 3;
+  string categoryId = 4;
 }
 
 message CatWithoutId {
-  string name = 2;
-  string color = 3;
+  string name = 1;
+  string color = 2;
+  string categoryId = 3;
 }
