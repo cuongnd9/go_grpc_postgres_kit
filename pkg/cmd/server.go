@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"context"
-	"github.com/103cuong/grpc_go_kit/configs"
-	"github.com/103cuong/grpc_go_kit/internal/migration"
-	"github.com/103cuong/grpc_go_kit/pkg/protocol"
+	"github.com/103cuong/go_grpc_postgres_kit/configs"
+	"github.com/103cuong/go_grpc_postgres_kit/internal/migration"
+	"github.com/103cuong/go_grpc_postgres_kit/pkg/protocol"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

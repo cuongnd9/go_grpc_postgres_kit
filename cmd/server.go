@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/103cuong/grpc_go_kit/pkg/cmd"
 	"os"
+
+	"github.com/103cuong/go_grpc_postgres_kit/pkg/cmd"
 )
 
 func main() {

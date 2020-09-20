@@ -3,7 +3,7 @@ package migration
 import (
 	"log"
 
-	"github.com/103cuong/grpc_go_kit/configs"
+	"github.com/103cuong/go_grpc_postgres_kit/configs"
 	"github.com/pressly/goose"
 
 	// postgres driver

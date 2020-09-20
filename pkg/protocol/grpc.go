@@ -3,8 +3,8 @@ package protocol
 import (
 	"context"
 	"fmt"
-	API "github.com/103cuong/grpc_go_kit/pkg/api/server"
-	"github.com/103cuong/grpc_go_kit/pkg/grpc/server"
+	API "github.com/103cuong/go_grpc_postgres_kit/pkg/api/server"
+	"github.com/103cuong/go_grpc_postgres_kit/pkg/grpc/server"
 	"google.golang.org/grpc"
 	"log"
 	"net"
