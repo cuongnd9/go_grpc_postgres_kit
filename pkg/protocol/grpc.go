@@ -1,10 +1,10 @@
-package grpc
+package protocol
 
 import (
 	"context"
 	"fmt"
-	greeterApiV2 "github.com/103cuong/grpc_go_kit/pkg/api/v2"
-	greeterServiceV2 "github.com/103cuong/grpc_go_kit/pkg/service/v2"
+	greeterApi "github.com/103cuong/grpc_go_kit/pkg/api/server"
+	greeterServer "github.com/103cuong/grpc_go_kit/pkg/grpc/server"
 	"google.golang.org/grpc"
 	"log"
 	"net"
@@ -21,7 +21,7 @@ func RunServer(ctx context.Context, port string) error { // optional param: db
 
 	// register service
 	server := grpc.NewServer()
-	greeterApiV2.RegisterGreeterServer(server, &greeterServiceV2.GreeterServiceServer{})
+	greeterApi.RegisterGreeterServer(server, &greeterServer.GreeterServiceServer{})
 
 	// graceful shutdown
 	c := make(chan os.Signal, 1)
