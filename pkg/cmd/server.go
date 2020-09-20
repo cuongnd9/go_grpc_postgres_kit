@@ -22,7 +22,7 @@ func RunServer() error {
 	}
 
 	// migrate database.
-	migration.MigrateDB("up")
+	migration.MigrateDB("up", "./internal/migration")
 
 	return protocol.RunServer(ctx, "50000")
 }

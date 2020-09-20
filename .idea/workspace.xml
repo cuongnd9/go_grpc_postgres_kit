@@ -20,29 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="903636b9-1f1f-499e-8b83-525798336128" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/configs/database.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/migration/20200905230730_create_uuid_extension.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/migration/20200906222909_create_categories.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/migration/20200906235925_create_cats.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/migration/migration.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/model/cat.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/model/category.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/model/pure.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/service/cat.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/service/category.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/build/docker/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/migration/down.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/migration/up.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/build/docker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/proto/v1/cat_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/api/proto/server/cat.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/proto/v2/greeter.proto" beforeDir="false" afterPath="$PROJECT_DIR$/api/proto/server/greeter.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/api/v1/cat_service.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/api/v2/greeter.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/api/server/greeter.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/migration/migration.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/migration/migration.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/cmd/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/cmd/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/protocol/grpc/grpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/protocol/grpc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/service/v1/.keep" beforeDir="false" afterPath="$PROJECT_DIR$/build/ci/.keep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/service/v2/greeter_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/grpc/server/greeter.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,9 +64,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/api/proto/v2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/api/proto/v2" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/internal/migration" />
       <recent name="$PROJECT_DIR$/pkg/protocol" />
@@ -92,8 +71,11 @@
       <recent name="$PROJECT_DIR$/api/proto/server" />
       <recent name="$PROJECT_DIR$/build/package" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/proto/v2" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.go build github.com/103cuong/grpc_go_kit/cmd/migration">
     <configuration name="go build github.com/103cuong/grpc_go_kit/cmd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="grpc_go_kit" />
       <working_directory value="$PROJECT_DIR$" />
@@ -103,8 +85,18 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="go build github.com/103cuong/grpc_go_kit/cmd/migration" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="grpc_go_kit" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/cmd/migration/down.go" />
+      <package value="github.com/103cuong/grpc_go_kit/cmd/migration" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/103cuong/grpc_go_kit/cmd/migration" />
         <item itemvalue="Go Build.go build github.com/103cuong/grpc_go_kit/cmd" />
       </list>
     </recent_temporary>
@@ -136,21 +128,21 @@
       <screen x="0" y="23" width="1440" height="838" />
     </state>
     <state x="456" y="252" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.838@0.23.1440.838" timestamp="1600534181546" />
-    <state width="1378" height="204" key="GridCell.Tab.0.bottom" timestamp="1600594850457">
+    <state width="1378" height="204" key="GridCell.Tab.0.bottom" timestamp="1600596222884">
       <screen x="0" y="23" width="1440" height="838" />
     </state>
-    <state width="1378" height="204" key="GridCell.Tab.0.bottom/0.23.1440.838@0.23.1440.838" timestamp="1600594850457" />
-    <state width="1378" height="204" key="GridCell.Tab.0.center" timestamp="1600594850456">
+    <state width="1378" height="204" key="GridCell.Tab.0.bottom/0.23.1440.838@0.23.1440.838" timestamp="1600596222884" />
+    <state width="1378" height="204" key="GridCell.Tab.0.center" timestamp="1600596222882">
       <screen x="0" y="23" width="1440" height="838" />
     </state>
-    <state width="1378" height="204" key="GridCell.Tab.0.center/0.23.1440.838@0.23.1440.838" timestamp="1600594850456" />
-    <state width="1378" height="204" key="GridCell.Tab.0.left" timestamp="1600594850456">
+    <state width="1378" height="204" key="GridCell.Tab.0.center/0.23.1440.838@0.23.1440.838" timestamp="1600596222882" />
+    <state width="1378" height="204" key="GridCell.Tab.0.left" timestamp="1600596222882">
       <screen x="0" y="23" width="1440" height="838" />
     </state>
-    <state width="1378" height="204" key="GridCell.Tab.0.left/0.23.1440.838@0.23.1440.838" timestamp="1600594850456" />
-    <state width="1378" height="204" key="GridCell.Tab.0.right" timestamp="1600594850456">
+    <state width="1378" height="204" key="GridCell.Tab.0.left/0.23.1440.838@0.23.1440.838" timestamp="1600596222882" />
+    <state width="1378" height="204" key="GridCell.Tab.0.right" timestamp="1600596222883">
       <screen x="0" y="23" width="1440" height="838" />
     </state>
-    <state width="1378" height="204" key="GridCell.Tab.0.right/0.23.1440.838@0.23.1440.838" timestamp="1600594850456" />
+    <state width="1378" height="204" key="GridCell.Tab.0.right/0.23.1440.838@0.23.1440.838" timestamp="1600596222883" />
   </component>
 </project>
