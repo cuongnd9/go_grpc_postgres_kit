@@ -11,7 +11,7 @@ import (
 )
 
 // MigrateDB migrate the database
-func MigrateDB(command string) {
+func MigrateDB(command string, dir string, arguments... string) {
 	dbstring := configs.BuildDSN()
 	db, err := goose.OpenDBWithDriver("postgres", dbstring)
 	if err != nil {
@@ -24,7 +24,7 @@ func MigrateDB(command string) {
 		}
 	}()
 
-	if err := goose.Run(command, db, "./internal/migration"); err != nil {
+	if err := goose.Run(command, db, dir, arguments...); err != nil {
 		log.Fatalf("goose run failed :%v\n", err)
 	}
 }
