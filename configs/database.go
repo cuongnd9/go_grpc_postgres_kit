@@ -1,9 +1,9 @@
 package configs
 
 import (
-	"fmt"
 	"os"
 
+	"fmt"
 	"github.com/mcuadros/go-defaults"
 	"gorm.io/gorm"
 )
@@ -11,8 +11,8 @@ import (
 // DB GORM DB instance
 var DB *gorm.DB
 
-// DBConfig database configuration
-type DBConfig struct {
+// DatabaseConfig database configuration
+type DatabaseConfig struct {
 	Host     string `default:"0.0.0.0"`
 	Port     string `default:"5432"`
 	User     string `default:"postgres"`
@@ -20,27 +20,25 @@ type DBConfig struct {
 	Password string `default:"postgres"`
 }
 
-// BuildDBConfig build DB config
-func BuildDBConfig() *DBConfig {
-	dbConfig := DBConfig{
+var Database DatabaseConfig
+var DatabaseDSN string
+
+// BuildDatabaseConfig build DB config
+func BuildDatabaseConfig() {
+	Database = DatabaseConfig{
 		Host:     os.Getenv("PG_HOST"),
 		Port:     os.Getenv("PG_PORT"),
 		User:     os.Getenv("PG_USER"),
 		DBName:   os.Getenv("PG_DBNAME"),
 		Password: os.Getenv("PG_PASSWORD"),
 	}
-	defaults.SetDefaults(&dbConfig)
-	return &dbConfig
-}
-
-// BuildDSN build Postgresql's DSN
-func BuildDSN() string {
-	dbConfig := BuildDBConfig()
-	return fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable",
-		dbConfig.Host,
-		dbConfig.User,
-		dbConfig.Password,
-		dbConfig.DBName,
-		dbConfig.Port,
+	defaults.SetDefaults(&Database)
+	DatabaseDSN = fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable",
+		Database.Host,
+		Database.User,
+		Database.Password,
+		Database.DBName,
+		Database.Port,
 	)
 }
+

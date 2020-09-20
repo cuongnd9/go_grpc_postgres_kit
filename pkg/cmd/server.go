@@ -14,7 +14,7 @@ func RunServer() error {
 
 	var err error
 	configs.DB, err = gorm.Open(postgres.New(postgres.Config{
-		DSN:                  configs.BuildDSN(),
+		DSN:                  configs.DatabaseDSN,
 		PreferSimpleProtocol: true,
 	}), &gorm.Config{})
 	if err != nil {
@@ -24,5 +24,5 @@ func RunServer() error {
 	// migrate database.
 	migration.MigrateDB("up", "./internal/migration")
 
-	return protocol.RunServer(ctx, "50000")
+	return protocol.RunServer(ctx, configs.App.Port)
 }

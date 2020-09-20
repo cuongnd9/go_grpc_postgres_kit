@@ -12,7 +12,7 @@ import (
 
 // MigrateDB migrate the database
 func MigrateDB(command string, dir string, arguments... string) {
-	dbstring := configs.BuildDSN()
+	dbstring := configs.DatabaseDSN
 	db, err := goose.OpenDBWithDriver("postgres", dbstring)
 	if err != nil {
 		log.Fatalf("goose: failed to open DB: %v\n", err)
