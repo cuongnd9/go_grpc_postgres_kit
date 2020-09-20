@@ -2,13 +2,14 @@
 package service
 
 import (
+	"context"
 	"github.com/103cuong/go_grpc_postgres_kit/configs"
 	"github.com/103cuong/go_grpc_postgres_kit/pkg/model"
 )
 
 // GetCategories fetch all categories
-func GetCategories(categories *[]model.Category) (err error) {
-	err = configs.DB.Preload("Cats").Find(&categories).Error
+func GetCategories(ctx context.Context, categories *[]model.Category) (err error) {
+	err = configs.DB.WithContext(ctx).Preload("Cats").Find(&categories).Error
 	if err != nil {
 		return err
 	}
@@ -16,8 +17,8 @@ func GetCategories(categories *[]model.Category) (err error) {
 }
 
 // CreateCategory create new category
-func CreateCategory(category *model.Category) (err error) {
-	err = configs.DB.Create(&category).Error
+func CreateCategory(ctx context.Context, category *model.Category) (err error) {
+	err = configs.DB.WithContext(ctx).Create(&category).Error
 	if err != nil {
 		return err
 	}

@@ -12,7 +12,7 @@ type CatServer struct {}
 
 func (s *CatServer) ReadAll(ctx context.Context, req *server.ReadAllRequest) (*server.ReadAllResponse, error) {
 	var cats []model.Cat
-	err := service.GetCats(&cats)
+	err := service.GetCats(ctx, &cats)
 	if err != nil {
 		return nil, err
 	}
@@ -33,7 +33,7 @@ func (s *CatServer) ReadAll(ctx context.Context, req *server.ReadAllRequest) (*s
 
 func (s *CatServer) Read(ctx context.Context, req *server.ReadRequest) (*server.ReadResponse, error) {
 	var cat model.Cat
-	err := service.GetCatByID(&cat, req.Id)
+	err := service.GetCatByID(ctx, &cat, req.Id)
 	if err != nil {
 		return nil, err
 	}
@@ -53,7 +53,7 @@ func (s *CatServer) Create(ctx context.Context, req *server.CreateRequest) (*ser
 		Color:      req.Cat.Color,
 		CategoryID: req.Cat.CategoryId,
 	}
-	err := service.CreateCat(&newCat)
+	err := service.CreateCat(ctx, &newCat)
 	if err != nil {
 		return nil, err
 	}
@@ -76,7 +76,7 @@ func (s *CatServer) Update(ctx context.Context, req *server.UpdateRequest) (*ser
 		Color:      req.Cat.Color,
 		CategoryID: req.Cat.CategoryId,
 	}
-	err := service.UpdateCat(&cat)
+	err := service.UpdateCat(ctx, &cat)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func (s *CatServer) Update(ctx context.Context, req *server.UpdateRequest) (*ser
 }
 
 func (s *CatServer) Delete(ctx context.Context, req *server.DeleteRequest) (*server.DeleteResponse, error) {
-	err := service.DeleteCat(&model.Cat{}, req.Id)
+	err := service.DeleteCat(ctx, &model.Cat{}, req.Id)
 	if err != nil {
 		return nil, err
 	}
