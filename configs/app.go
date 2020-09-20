@@ -10,12 +10,12 @@ type AppConfig struct {
 	Port string `default:"50000"`
 }
 
-var App AppConfig
+var AppConf AppConfig
 
 func BuildAppConfig() {
-	App = AppConfig{
+	AppConf = AppConfig{
 		GoENV: os.Getenv("GO_ENV"),
 		Port:  os.Getenv("PORT"),
 	}
-	defaults.SetDefaults(&App)
+	defaults.SetDefaults(&AppConf)
 }

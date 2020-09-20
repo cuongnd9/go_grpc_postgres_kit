@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	API "github.com/103cuong/go_grpc_postgres_kit/pkg/api/server"
-	"github.com/103cuong/go_grpc_postgres_kit/pkg/grpc/server"
+	"github.com/103cuong/go_grpc_postgres_kit/pkg/server"
 	"google.golang.org/grpc"
 	"log"
 	"net"
