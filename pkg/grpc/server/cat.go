@@ -2,9 +2,9 @@ package server
 
 import (
 	"context"
-	"github.com/103cuong/grpc_go_kit/pkg/api/server"
-	"github.com/103cuong/grpc_go_kit/pkg/model"
-	"github.com/103cuong/grpc_go_kit/pkg/service"
+	"github.com/103cuong/go_grpc_postgres_kit/pkg/api/server"
+	"github.com/103cuong/go_grpc_postgres_kit/pkg/model"
+	"github.com/103cuong/go_grpc_postgres_kit/pkg/service"
 	"github.com/google/uuid"
 )
 

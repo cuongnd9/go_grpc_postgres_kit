@@ -1,7 +1,7 @@
 package main
 
-import "github.com/103cuong/grpc_go_kit/internal/migration"
+import "github.com/103cuong/go_grpc_postgres_kit/internal/migration"
 
-func main()  {
+func main() {
 	migration.MigrateDB("down", "./internal/migration")
 }

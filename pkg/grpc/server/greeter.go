@@ -2,7 +2,7 @@ package server
 
 import (
 	"context"
-	"github.com/103cuong/grpc_go_kit/pkg/api/server"
+	"github.com/103cuong/go_grpc_postgres_kit/pkg/api/server"
 )
 
 type GreeterServer struct {}

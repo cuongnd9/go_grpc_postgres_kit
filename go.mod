@@ -1,4 +1,4 @@
-module github.com/103cuong/grpc_go_kit
+module github.com/103cuong/go_grpc_postgres_kit
 
 go 1.14
 

@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/103cuong/grpc_go_kit/configs"
-	"github.com/103cuong/grpc_go_kit/pkg/model"
+	"github.com/103cuong/go_grpc_postgres_kit/configs"
+	"github.com/103cuong/go_grpc_postgres_kit/pkg/model"
 )
 
 // GetCats fetch all cats.
